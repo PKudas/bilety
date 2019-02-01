@@ -1,0 +1,18 @@
+<link rel="stylesheet" type="text/css" href="pstyle.css">
+
+<div style="float: left">
+<h1>New Ticket</h1>
+<%= render 'form', ticket: @ticket %>
+
+<%= link_to 'Back to tickets', tickets_path %><br>
+<%#<%= link_to 'Back to events', events_path %>
+</div>
+
+<div style="float: left; margin-left: 40px">
+<h1> Wszystkie wydarzenia</h1>
+<ul class="a">
+	<% for event in Event.all %> 
+		<li><%= link_to event.artist, event %> (id:<%= event.id %>)</li>
+	<% end %>
+</ul>
+</div>

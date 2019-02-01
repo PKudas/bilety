@@ -1,0 +1,45 @@
+<link rel="stylesheet" type="text/css" href="pstyle.css">
+<p id="notice"><%= notice %></p>
+
+<div style="float: left; margin-bottom: 40px">
+<%= render "new_ticket", ticket: Ticket.new(:event_id => @event.id) %>
+</div>
+
+<div style="float: left; margin-left: 30px">
+<h1>Event details</h1>
+<p>
+  <strong>Artist:</strong>
+  <%= @event.artist %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Price_low:</strong>
+  <%= @event.price_low %>
+</p>
+
+<p>
+  <strong>Price_high:</strong>
+  <%= @event.price_high %>
+</p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @event.event_date %>
+</p>
+
+<p>
+  <strong>Event id:</strong>
+  <%= @event.id %>
+</p>
+</div>
+
+<div style="clear: both">
+<%= render "tickets_list", tickets: Ticket.where(event_id: @event.id) %>
+</div>
+<br>
+<%= link_to 'Back to events', events_path %>

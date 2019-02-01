@@ -1,0 +1,10 @@
+<link rel="stylesheet" type="text/css" href="pstyle.css">
+<h1> Wszystkie wydarzenia</h1>
+<ul class="a", style="list-style-type: circle; font-variant: small-caps; font-size: 140%">
+	<% for event in @events %>
+		<li><%= link_to event.artist, event %> (id:<%= event.id %>)</li>
+	<% end %>
+</ul>
+<%= link_to 'Nowe ogłoszenie', new_event_path %>
+<br>
+<%= link_to 'Back to main page', "/" %>

@@ -1,0 +1,7 @@
+<link rel="stylesheet" type="text/css" href="pstyle.css">
+<h1>New Ticket</h1>
+
+<%= render 'tickets/form', ticket: Ticket.new(:event_id => @event.id) %>
+
+
+

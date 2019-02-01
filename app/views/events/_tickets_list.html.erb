@@ -1,0 +1,33 @@
+<link rel="stylesheet" type="text/css" href="pstyle.css">
+<p id="notice"><%= notice %></p>
+
+<h1>Tickets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Seat id seq</th>
+      <th>Address</th>
+      <th>Price</th>
+      <th>Email address</th>
+			<th>Phone</th>
+			<th>Event id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Ticket.where(event_id: @event.id).each do |ticket| %>
+      <tr>
+        <td><%= ticket.name %></td>
+        <td><%= ticket.seat_id_seq %></td>
+        <td><%= ticket.address %></td>
+        <td><%= ticket.price %></td>
+        <td><%= ticket.email_address %></td>
+				<td><%= ticket.phone %></td>
+				<td><%= ticket.event_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
